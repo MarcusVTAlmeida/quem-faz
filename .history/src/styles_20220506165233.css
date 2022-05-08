@@ -1,0 +1,38 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .animes-list {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    );
+    list-style: none;
+    grid-gap: 1.5rem;
+  }
+  
+  .animes-list img {
+    max-width: 100%;
+  }
+  
+  .pagination {
+    display: flex;
+    list-style: none;
+  }
+  
+  .pagination li + li {
+    margin-left: 1rem;
+  }
+  
+  .pagination__item--active {
+    background: none;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .pagination__item--active:focus {
+    outline: none;
+  }
+  
