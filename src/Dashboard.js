@@ -1,51 +1,46 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import ReactPaginate from "react-paginate";
 import "./App.css";
+import React, { useState } from "react";
+import JsonData from "./MOCK_DATA.json";
+import ReactPaginate from "react-paginate";
 
 function App() {
-  const [offset, setOffset] = useState(0);
-  const [data, setData] = useState([]);
-  const [perPage] = useState(10);
-  const [pageCount, setPageCount] = useState(0);
+  const [users, setUsers] = useState(JsonData.slice(0, 50));
+  const [pageNumber, setPageNumber] = useState(0);
 
-  const getData = async () => {
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/photos`);
-    const data = res.data;
-    const slice = data.slice(offset, offset + perPage);
-    const postData = slice.map((pd) => (
-      <div key={pd.id}>
-        <p>{pd.title}</p>
-        <img src={pd.thumbnailUrl} alt="" />
-      </div>
-    ));
-    setData(postData);
-    setPageCount(Math.ceil(data.length / perPage));
-  };
-  const handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    setOffset(selectedPage + 1);
-  };
+  const usersPerPage = 10;
+  const pagesVisited = pageNumber * usersPerPage;
 
-  useEffect(() => {
-    getData();
-  }, [offset]);
+  const displayUsers = users
+    .slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((user) => {
+      return (
+        <div className="user">
+          <h3>{user.firstName}</h3>
+          <h3>{user.lastName}</h3>
+          <h3>{user.email}</h3>
+        </div>
+      );
+    });
+
+  const pageCount = Math.ceil(users.length / usersPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <div className="App">
-      {data}
+      {displayUsers}
       <ReactPaginate
-        previousLabel={"prev"}
-        nextLabel={"next"}
-        breakLabel={"..."}
-        breakClassName={"break-me"}
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
         pageCount={pageCount}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        subContainerClassName={"pages pagination"}
-        activeClassName={"active"}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
       />
     </div>
   );
