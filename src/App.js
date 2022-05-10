@@ -8,8 +8,8 @@ import ProfileEdit from "./ProfileEdit";
 
 function App() {
   return (
-    <div className="app">
-      <Router>
+    <div>
+      <Router basename="/quem-faz">
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
           <Route exact path="/profile" element={<ProfileEdit />} />

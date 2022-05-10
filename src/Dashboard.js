@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
+import "./App.css";
 import { auth, db, logout } from "./firebase";
 import { query, collection, getDocs, where, doc, addDoc, setDoc, updateDoc, getDoc, onSnapshot } from "firebase/firestore";
 import debounce from "lodash.debounce";
@@ -64,15 +65,15 @@ function Dashboard() {
         ))}
      
       <ReactPaginate
-        previousLabel={"Previous"}
-        nextLabel={"Next"}
+        previousLabel={"Voltar"}
+        nextLabel={"Próximo"}
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={"paginationBttns"}
         previousLinkClassName={"previousBttn"}
         nextLinkClassName={"nextBttn"}
         disabledClassName={"paginationDisabled"}
-        activeClassName={"paginationActive"}
+        activeClassName={"paginationActive"}       
       />
       </div>
     </div>
