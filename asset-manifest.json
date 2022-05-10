@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/quem-faz/static/css/main.1f72cb0d.css",
-    "main.js": "/quem-faz/static/js/main.3c7ae217.js",
-    "static/js/787.9e30e28b.chunk.js": "/quem-faz/static/js/787.9e30e28b.chunk.js",
-    "index.html": "/quem-faz/index.html",
-    "main.1f72cb0d.css.map": "/quem-faz/static/css/main.1f72cb0d.css.map",
-    "main.3c7ae217.js.map": "/quem-faz/static/js/main.3c7ae217.js.map",
-    "787.9e30e28b.chunk.js.map": "/quem-faz/static/js/787.9e30e28b.chunk.js.map"
+    "main.css": "./static/css/main.1f72cb0d.css",
+    "main.js": "./static/js/main.3db2d215.js",
+    "static/js/787.9e30e28b.chunk.js": "./static/js/787.9e30e28b.chunk.js",
+    "index.html": "./index.html",
+    "main.1f72cb0d.css.map": "./static/css/main.1f72cb0d.css.map",
+    "main.3db2d215.js.map": "./static/js/main.3db2d215.js.map",
+    "787.9e30e28b.chunk.js.map": "./static/js/787.9e30e28b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1f72cb0d.css",
-    "static/js/main.3c7ae217.js"
+    "static/js/main.3db2d215.js"
   ]
 }
