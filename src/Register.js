@@ -22,7 +22,7 @@ function Register() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/profile");
+    if (user) navigate("/CompleteRegister");
   }, [user, loading]);
 
   return (

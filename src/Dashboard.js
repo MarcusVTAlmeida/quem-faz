@@ -51,10 +51,10 @@ function Dashboard() {
           <Link to="/login">Login</Link>
         </div>
         <div>
-          <Link to="/resgister">Registrar</Link>
+          <Link to="/register">Registrar</Link>
         </div>
         Encontre um prestador de serviço
-        <input type="search" onChange={debouncedOnChange} autoCapitalize='characters' />
+        <input placeholder="Encontre um prestador de serviço" type="search" onChange={debouncedOnChange} autoCapitalize='characters' />
         {filteredItems.slice(pagesVisited, pagesVisited + usersPerPage).map((user) => (
           <div>
             <div style={{ border: "5px solid", borderColor: "#a36a00" }} />

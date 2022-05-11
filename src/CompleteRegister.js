@@ -6,7 +6,7 @@ import { auth, db, logout } from "./firebase";
 import { query, collection, getDocs, where, doc, addDoc, setDoc, updateDoc, getDoc, onSnapshot } from "firebase/firestore";
 
 
-function ProfileEdit() {
+function CompleteRegister() {
     const [user, loading, error] = useAuthState(auth);
     const [nameAtual, setNameAtual] = useState("");
     const [photoAtual, setPhotoAtual] = useState("");
@@ -40,7 +40,6 @@ function ProfileEdit() {
         const docRef = doc(db, "users", user.uid);
         await updateDoc(docRef, {
             cidade: cidade,
-            name: name,
             descricao: descricao,
             whatsapp: whatsapp
         });
@@ -63,29 +62,28 @@ function ProfileEdit() {
         <div className="dashboard">
             <div className="dashboard__container">
                 Bem vindo
-                <img src={`${photoAtual}`}></img>
+                <img src={`${photoAtual}`} />
                 <div>{nameAtual}</div>
                 <div>{cidadeAtual}</div>
                 <div>{descricaoAtual}</div>
                 <div>{whatsappAtual}</div>
                 <div>{user?.email}</div>
-                <button className="dashboard__btn" onClick={logout}>
-                    Logout
-                </button>
 
                 <form onSubmit={updatePerfil}><br />
-                    <input placeholder="Mude seu nome" type='text' name='name' required onChange={(e) => setName(e.target.value)} /><br />
-                    <input placeholder="Mude sua cidade" type='text' name='cidade' required onChange={(e) => setCidade(e.target.value)} /><br />
-                    <input placeholder="Mude seu whatsapp" type='text' name='whatsapp' required onChange={(e) => setWhatsapp(e.target.value)} /><br />
-                    <input placeholder="Mude sua descricao" type='text' name='descricao' required onChange={(e) => setDescricao(e.target.value)} /><br />
-                    <button className="dashboard__btn" type="submit">Atualizar dados</button><br />
+                    <input placeholder="Informe sua cidade" type='text' name='cidade' required onChange={(e) => setCidade(e.target.value)} /><br />
+                    <input placeholder="Informe seu whatsapp" type='text' name='whatsapp' required onChange={(e) => setWhatsapp(e.target.value)} /><br />
+                    <input placeholder="Informe sua descricao" type='text' name='descricao' required onChange={(e) => setDescricao(e.target.value)} /><br />
+                    <button className="dashboard__btn" type="submit">Adicionar dados</button><br />
                 </form>
+                <button className="dashboard__btn" onClick={logout}>
+                    Deslogar
+                </button>
                 <div>
-          <Link to="/">Voltar ao inicio</Link>
-        </div>
+                    <Link to="/">Voltar ao inicio</Link>
+                </div>
             </div>
         </div>
     );
 }
 
-export default ProfileEdit;
+export default CompleteRegister;
