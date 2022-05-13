@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/quem-faz/static/css/main.5f61c51f.css",
-    "main.js": "/quem-faz/static/js/main.5f420b76.js",
+    "main.js": "/quem-faz/static/js/main.8597360a.js",
     "static/js/787.9e30e28b.chunk.js": "/quem-faz/static/js/787.9e30e28b.chunk.js",
     "index.html": "/quem-faz/index.html",
     "main.5f61c51f.css.map": "/quem-faz/static/css/main.5f61c51f.css.map",
-    "main.5f420b76.js.map": "/quem-faz/static/js/main.5f420b76.js.map",
+    "main.8597360a.js.map": "/quem-faz/static/js/main.8597360a.js.map",
     "787.9e30e28b.chunk.js.map": "/quem-faz/static/js/787.9e30e28b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5f61c51f.css",
-    "static/js/main.5f420b76.js"
+    "static/js/main.8597360a.js"
   ]
 }
