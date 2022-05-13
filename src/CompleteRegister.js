@@ -36,9 +36,21 @@ function CompleteRegister() {
         }
     };
 
+    
+
     const updatePerfil = async () => {
-        const docRef = doc(db, "users", user.uid);
-        await updateDoc(docRef, {
+        const docRef = doc(db, "usersComplete", user.uid);
+        await setDoc(docRef, {
+            cidade: cidade,
+            descricao: descricao,
+            whatsapp: whatsapp,
+            name: nameAtual,
+            email: user?.email,
+            authProvider: "google",           
+            photo: photoAtual,
+        });
+        const docRef1 = doc(db, "users", user.uid);
+        await updateDoc(docRef1, {
             cidade: cidade,
             descricao: descricao,
             whatsapp: whatsapp
@@ -62,7 +74,7 @@ function CompleteRegister() {
         <div className="dashboard">
             <div className="dashboard__container">
                 Bem vindo
-                <img src={`${photoAtual}`} />
+                <img src={`${photoAtual}`} width="50" height="50" />
                 <div>{nameAtual}</div>
                 <div>{cidadeAtual}</div>
                 <div>{descricaoAtual}</div>
@@ -74,13 +86,14 @@ function CompleteRegister() {
                     <input placeholder="Informe seu whatsapp" type='text' name='whatsapp' required onChange={(e) => setWhatsapp(e.target.value)} /><br />
                     <input placeholder="Informe sua descricao" type='text' name='descricao' required onChange={(e) => setDescricao(e.target.value)} /><br />
                     <button className="dashboard__btn" type="submit">Adicionar dados</button><br />
+                    <button className="dashboard__btn" type="submit" onClick={logout}>
+                        Sair
+                    </button>
+                    <div>
+                        <Link to="/">Voltar ao inicio</Link>
+                    </div>
                 </form>
-                <button className="dashboard__btn" onClick={logout}>
-                    Deslogar
-                </button>
-                <div>
-                    <Link to="/">Voltar ao inicio</Link>
-                </div>
+
             </div>
         </div>
     );

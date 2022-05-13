@@ -12,16 +12,15 @@ function Login() {
 
   useEffect(() => {
     if (loading) {
-      // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/profile");
+    if (user) navigate("/");
   }, [user, loading]);
 
   return (
     <div className="login">
       <div className="login__container">
-        <input
+        {/* <input
           type="text"
           className="login__textBox"
           value={email}
@@ -40,15 +39,15 @@ function Login() {
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
-        </button>
+        </button> */}
         <button className="login__btn login__google" onClick={signInWithGoogle}>
-          Login with Google
+          Entre com a Google
         </button>
         <div>
-          <Link to="/reset">Forgot Password</Link>
+          <Link to="/reset">Esqueci minha senha</Link>
         </div>
         <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+          Não tem uma conta? <Link to="/register">Registre</Link> Agora.
         </div>
       </div>
     </div>

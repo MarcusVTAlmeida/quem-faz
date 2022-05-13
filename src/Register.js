@@ -28,7 +28,7 @@ function Register() {
   return (
     <div className="register">
       <div className="register__container">
-        <input
+        {/* <input
           type="text"
           className="register__textBox"
           value={name}
@@ -51,16 +51,16 @@ function Register() {
         />
         <button className="register__btn" onClick={register}>
           Register
-        </button>
+        </button> */}
         <button
           className="register__btn register__google"
           onClick={signInWithGoogle}
         >
-          Register with Google
+          Registrando com o Google
         </button>
 
         <div>
-          Already have an account? <Link to="/">Login</Link> now.
+          Você já tem uma conta? <Link to="/">Entre</Link> Agora.
         </div>
       </div>
     </div>

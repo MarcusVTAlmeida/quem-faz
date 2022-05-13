@@ -44,6 +44,14 @@ function ProfileEdit() {
             descricao: descricao,
             whatsapp: whatsapp
         });
+
+        const docRef1 = doc(db, "usersComplete", user.uid);
+        await updateDoc(docRef1, {
+            cidade: cidade,
+            name: name,
+            descricao: descricao,
+            whatsapp: whatsapp
+        });
     }
 
     //   const addCidade = async () => {      
@@ -63,7 +71,7 @@ function ProfileEdit() {
         <div className="dashboard">
             <div className="dashboard__container">
                 Bem vindo
-                <img src={`${photoAtual}`}></img>
+                <img src={`${photoAtual}`} width="50" height="50"></img>
                 <div>{nameAtual}</div>
                 <div>{cidadeAtual}</div>
                 <div>{descricaoAtual}</div>
