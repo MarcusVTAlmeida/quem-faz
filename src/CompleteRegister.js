@@ -8,15 +8,10 @@ import { query, collection, getDocs, where, doc, addDoc, setDoc, updateDoc, getD
 
 function CompleteRegister() {
     const [user, loading, error] = useAuthState(auth);
-    const [nameAtual, setNameAtual] = useState("");
-    const [photoAtual, setPhotoAtual] = useState("");
     const [photo, setPhoto] = useState("");
     const [name, setName] = useState("");
-    const [cidadeAtual, setCidadeAtual] = useState("");
     const [cidade, setCidade] = useState("")
     const [descricao, setDescricao] = useState("")
-    const [descricaoAtual, setDescricaoAtual] = useState("")
-    const [whatsappAtual, setWhatsappAtual] = useState("")
     const [whatsapp, setWhatsapp] = useState("")
     const navigate = useNavigate();
 
@@ -25,18 +20,18 @@ function CompleteRegister() {
             const q = query(collection(db, "users"), where("uid", "==", user?.uid));
             const doc = await getDocs(q);
             const data = doc.docs[0].data();
-            setNameAtual(data.name);
-            setCidadeAtual(data.cidade);
-            setDescricaoAtual(data.descricao)
-            setWhatsappAtual(data.whatsapp)
-            setPhotoAtual(data.photo)
+            setName(data.name);
+            setCidade(data.cidade);
+            setDescricao(data.descricao)
+            setWhatsapp(data.whatsapp)
+            setPhoto(data.photo)
         } catch (err) {
             console.error(err);
             // alert("An error occured while fetching user data");
         }
     };
 
-    
+
 
     const updatePerfil = async () => {
         const docRef = doc(db, "usersComplete", user.uid);
@@ -44,16 +39,17 @@ function CompleteRegister() {
             cidade: cidade,
             descricao: descricao,
             whatsapp: whatsapp,
-            name: nameAtual,
+            name: name,
             email: user?.email,
-            authProvider: "google",           
-            photo: photoAtual,
+            authProvider: "google",
+            photo: photo,
         });
         const docRef1 = doc(db, "users", user.uid);
         await updateDoc(docRef1, {
             cidade: cidade,
             descricao: descricao,
-            whatsapp: whatsapp
+            whatsapp: whatsapp,
+            name: name,
         });
     }
 
@@ -74,25 +70,26 @@ function CompleteRegister() {
         <div className="dashboard">
             <div className="dashboard__container">
                 Bem vindo
-                <img src={`${photoAtual}`} width="50" height="50" />
-                <div>{nameAtual}</div>
-                <div>{cidadeAtual}</div>
-                <div>{descricaoAtual}</div>
-                <div>{whatsappAtual}</div>
+                <img src={`${photo}`} width="50" height="50" />
+                <div>{name}</div>
+                <div>{cidade}</div>
+                <div>{descricao}</div>
+                <div>{whatsapp}</div>
                 <div>{user?.email}</div>
 
-                <form onSubmit={updatePerfil}><br />
-                    <input placeholder="Informe sua cidade" type='text' name='cidade' required onChange={(e) => setCidade(e.target.value)} /><br />
-                    <input placeholder="Informe seu whatsapp" type='text' name='whatsapp' required onChange={(e) => setWhatsapp(e.target.value)} /><br />
-                    <input placeholder="Informe sua descricao" type='text' name='descricao' required onChange={(e) => setDescricao(e.target.value)} /><br />
-                    <button className="dashboard__btn" type="submit">Adicionar dados</button><br />
-                    <button className="dashboard__btn" type="submit" onClick={logout}>
-                        Sair
-                    </button>
-                    <div>
-                        <Link to="/">Voltar ao inicio</Link>
-                    </div>
-                </form>
+
+                <input placeholder="Mude seu nome" type='text' name='name' required onChange={(e) => setName(e.target.value)} />
+                <input placeholder="Informe sua cidade" type='text' name='cidade' required onChange={(e) => setCidade(e.target.value)} />
+                <input placeholder="Informe seu whatsapp" type='text' name='whatsapp' required onChange={(e) => setWhatsapp(e.target.value)} />
+                <input placeholder="Informe sua descricao" type='text' name='descricao' required onChange={(e) => setDescricao(e.target.value)} />
+                <button className="dashboard__btn" onClick={updatePerfil}>Adicionar dados</button>
+                <button className="dashboard__btn" onClick={logout}>
+                    Sair
+                </button>
+                <div>
+                    <Link to="/">Voltar ao inicio</Link>
+                </div>
+
 
             </div>
         </div>

@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ==== BANNERS ==== */
+
+.glass{
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#texto-apresentacao{
+    background-image: url(./img/screw-4929711.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+#texto-registro{
+    background-image: url(./img/binoculars-100590_1920.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: bottom;
+}
+
+#texto-entrar{
+    background-image: url(./img/student-849822_1920.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top;
+}
+
+
+/* ==== FOTO USUARIO ====*/
+
+#img-google-logo{
+    width: 30%;
+    
+    height: auto;
+}
+
+.img-editar-perfil{
+    width: 200px;
+    border-radius: 50%;
+    height: 200px;
+}
+
+.img-card{
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    padding: 10px;
+}
+
+.img-perfil{
+    
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+
+}
+
+/* ==== TEXTOS ==== */
+
+#nome-usuario{
+    padding-top: 20px;
 }

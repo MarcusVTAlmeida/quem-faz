@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100vw;
+    background-color: #282c34;
   }
   
   .user {
@@ -31,23 +32,23 @@
     padding: 10px;
     margin: 8px;
     border-radius: 5px;
-    border: #a36a00;
-    color: #a36a00;
+    border: #000000;
+    color: rgb(5, 152, 172);
     cursor: pointer;
   }
   
   .paginationBttns a:hover {
-    color: rgb(0, 0, 0);
-    background-color: #a36a00;
+    color: rgb(255, 255, 255);
+    background-color: rgb(5, 152, 172);
   }
   
   .paginationActive a {
-    color: rgb(8, 8, 8);
-    background-color: #a36a00;
+    color: rgb(255, 255, 255);
+    background-color: rgb(5, 152, 172);
   }
   
   .paginationDisabled a {
-    color: grey;
-    background-color: rgb(19, 18, 18);
+    color: rgb(5, 152, 172);
+    background-color: rgb(255, 255, 255);
   }
   

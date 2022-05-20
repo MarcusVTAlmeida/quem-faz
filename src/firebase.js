@@ -51,7 +51,8 @@ const signInWithGoogle = async () => {
         authProvider: "google",
         email: user.email,
         photo: user.photoURL,
-        phone: user.phoneNumber
+        phone: user.phoneNumber,
+        cidade: ''
       });
     }
   } catch (err) {
