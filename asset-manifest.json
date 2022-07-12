@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/quem-faz/static/css/main.512cda26.css",
-    "main.js": "/quem-faz/static/js/main.aeac5e5e.js",
+    "main.css": "/quem-faz/static/css/main.a7a2d087.css",
+    "main.js": "/quem-faz/static/js/main.6be2c65b.js",
     "static/js/787.9e30e28b.chunk.js": "/quem-faz/static/js/787.9e30e28b.chunk.js",
     "static/media/screw-4929711.jpg": "/quem-faz/static/media/screw-4929711.f97ecf545e724fd30fed.jpg",
     "static/media/binoculars-100590_1920.jpg": "/quem-faz/static/media/binoculars-100590_1920.0a2b4178f988f2b95602.jpg",
     "static/media/student-849822_1920.jpg": "/quem-faz/static/media/student-849822_1920.46e4c737f92602230cca.jpg",
     "index.html": "/quem-faz/index.html",
-    "main.512cda26.css.map": "/quem-faz/static/css/main.512cda26.css.map",
-    "main.aeac5e5e.js.map": "/quem-faz/static/js/main.aeac5e5e.js.map",
+    "main.a7a2d087.css.map": "/quem-faz/static/css/main.a7a2d087.css.map",
+    "main.6be2c65b.js.map": "/quem-faz/static/js/main.6be2c65b.js.map",
     "787.9e30e28b.chunk.js.map": "/quem-faz/static/js/787.9e30e28b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.512cda26.css",
-    "static/js/main.aeac5e5e.js"
+    "static/css/main.a7a2d087.css",
+    "static/js/main.6be2c65b.js"
   ]
 }
